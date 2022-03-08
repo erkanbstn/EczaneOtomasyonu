@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EczCVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="EczaneGunlukKasa">
+    <Key>
+      <PropertyRef Name="KayıtNo" />
+    </Key>
+    <Property Name="KayıtNo" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="KasaIslemTipi" Type="varchar" MaxLength="50" />
+    <Property Name="KasaIslemMiktari" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Not" Type="varchar(max)" />
+    <Property Name="IslemTarihi" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EczaneYaren">
+    <Key>
+      <PropertyRef Name="Hasta" />
+    </Key>
+    <Property Name="Hasta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IlacDurum" Type="varchar" MaxLength="50" />
+    <Property Name="Tarih" Type="varchar" MaxLength="50" />
+    <Property Name="Not" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="EczaneYarenAdmin">
+    <Key>
+      <PropertyRef Name="KayitNo" />
+    </Key>
+    <Property Name="KayitNo" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Personel" Type="varchar(max)" />
+    <Property Name="PersonelSifre" Type="varchar" MaxLength="8" />
+    <Property Name="Yetki" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="EczaneYarenBorc">
+    <Key>
+      <PropertyRef Name="Hasta" />
+    </Key>
+    <Property Name="Hasta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BorcDurum" Type="varchar" MaxLength="50" />
+    <Property Name="Borc" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Kalan" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="BorcTarih" Type="varchar" MaxLength="50" />
+    <Property Name="KapanmaTarih" Type="varchar" MaxLength="50" />
+    <Property Name="Not" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="EczaneYarenKasaCikis">
+    <Key>
+      <PropertyRef Name="Tarih" />
+    </Key>
+    <Property Name="Tarih" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kasa" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EczaneYarenRapor">
+    <Key>
+      <PropertyRef Name="RaporNo" />
+    </Key>
+    <Property Name="RaporNo" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Rapor" Type="varchar(max)" />
+    <Property Name="RaporTarih" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="EczCVModelStoreContainer">
+    <EntitySet Name="EczaneGunlukKasa" EntityType="Self.EczaneGunlukKasa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EczaneYaren" EntityType="Self.EczaneYaren" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EczaneYarenAdmin" EntityType="Self.EczaneYarenAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EczaneYarenBorc" EntityType="Self.EczaneYarenBorc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EczaneYarenKasaCikis" EntityType="Self.EczaneYarenKasaCikis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EczaneYarenRapor" EntityType="Self.EczaneYarenRapor" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

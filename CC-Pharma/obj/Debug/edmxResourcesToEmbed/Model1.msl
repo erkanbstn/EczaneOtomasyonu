@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EczCVModelStoreContainer" CdmEntityContainer="EczCVEntities">
+    <EntitySetMapping Name="EczaneYaren">
+      <EntityTypeMapping TypeName="EczCVModel.EczaneYaren">
+        <MappingFragment StoreEntitySet="EczaneYaren">
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="IlacDurum" ColumnName="IlacDurum" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Not" ColumnName="Not" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EczaneYarenAdmin">
+      <EntityTypeMapping TypeName="EczCVModel.EczaneYarenAdmin">
+        <MappingFragment StoreEntitySet="EczaneYarenAdmin">
+          <ScalarProperty Name="KayitNo" ColumnName="KayitNo" />
+          <ScalarProperty Name="Personel" ColumnName="Personel" />
+          <ScalarProperty Name="PersonelSifre" ColumnName="PersonelSifre" />
+          <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EczaneYarenBorc">
+      <EntityTypeMapping TypeName="EczCVModel.EczaneYarenBorc">
+        <MappingFragment StoreEntitySet="EczaneYarenBorc">
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="BorcDurum" ColumnName="BorcDurum" />
+          <ScalarProperty Name="Borc" ColumnName="Borc" />
+          <ScalarProperty Name="Kalan" ColumnName="Kalan" />
+          <ScalarProperty Name="BorcTarih" ColumnName="BorcTarih" />
+          <ScalarProperty Name="KapanmaTarih" ColumnName="KapanmaTarih" />
+          <ScalarProperty Name="Not" ColumnName="Not" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EczaneYarenRapor">
+      <EntityTypeMapping TypeName="EczCVModel.EczaneYarenRapor">
+        <MappingFragment StoreEntitySet="EczaneYarenRapor">
+          <ScalarProperty Name="RaporNo" ColumnName="RaporNo" />
+          <ScalarProperty Name="Rapor" ColumnName="Rapor" />
+          <ScalarProperty Name="RaporTarih" ColumnName="RaporTarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EczaneGunlukKasa">
+      <EntityTypeMapping TypeName="EczCVModel.EczaneGunlukKasa">
+        <MappingFragment StoreEntitySet="EczaneGunlukKasa">
+          <ScalarProperty Name="IslemTarihi" ColumnName="IslemTarihi" />
+          <ScalarProperty Name="Not" ColumnName="Not" />
+          <ScalarProperty Name="KasaIslemMiktari" ColumnName="KasaIslemMiktari" />
+          <ScalarProperty Name="KasaIslemTipi" ColumnName="KasaIslemTipi" />
+          <ScalarProperty Name="KayıtNo" ColumnName="KayıtNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EczaneYarenKasaCikis">
+      <EntityTypeMapping TypeName="EczCVModel.EczaneYarenKasaCikis">
+        <MappingFragment StoreEntitySet="EczaneYarenKasaCikis">
+          <ScalarProperty Name="Kasa" ColumnName="Kasa" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

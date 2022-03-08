@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EczCVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EczaneGunlukKasa">
+          <Key>
+            <PropertyRef Name="KayıtNo" />
+          </Key>
+          <Property Name="KayıtNo" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="KasaIslemTipi" Type="varchar" MaxLength="50" />
+          <Property Name="KasaIslemMiktari" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Not" Type="varchar(max)" />
+          <Property Name="IslemTarihi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EczaneYaren">
+          <Key>
+            <PropertyRef Name="Hasta" />
+          </Key>
+          <Property Name="Hasta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IlacDurum" Type="varchar" MaxLength="50" />
+          <Property Name="Tarih" Type="varchar" MaxLength="50" />
+          <Property Name="Not" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="EczaneYarenAdmin">
+          <Key>
+            <PropertyRef Name="KayitNo" />
+          </Key>
+          <Property Name="KayitNo" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Personel" Type="varchar(max)" />
+          <Property Name="PersonelSifre" Type="varchar" MaxLength="8" />
+          <Property Name="Yetki" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="EczaneYarenBorc">
+          <Key>
+            <PropertyRef Name="Hasta" />
+          </Key>
+          <Property Name="Hasta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BorcDurum" Type="varchar" MaxLength="50" />
+          <Property Name="Borc" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Kalan" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="BorcTarih" Type="varchar" MaxLength="50" />
+          <Property Name="KapanmaTarih" Type="varchar" MaxLength="50" />
+          <Property Name="Not" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="EczaneYarenKasaCikis">
+          <Key>
+            <PropertyRef Name="Tarih" />
+          </Key>
+          <Property Name="Tarih" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kasa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EczaneYarenRapor">
+          <Key>
+            <PropertyRef Name="RaporNo" />
+          </Key>
+          <Property Name="RaporNo" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Rapor" Type="varchar(max)" />
+          <Property Name="RaporTarih" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="EczCVModelStoreContainer">
+          <EntitySet Name="EczaneGunlukKasa" EntityType="Self.EczaneGunlukKasa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EczaneYaren" EntityType="Self.EczaneYaren" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EczaneYarenAdmin" EntityType="Self.EczaneYarenAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EczaneYarenBorc" EntityType="Self.EczaneYarenBorc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EczaneYarenKasaCikis" EntityType="Self.EczaneYarenKasaCikis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EczaneYarenRapor" EntityType="Self.EczaneYarenRapor" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EczCVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EczaneYaren">
+          <Key>
+            <PropertyRef Name="Hasta" />
+          </Key>
+          <Property Name="Hasta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IlacDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EczaneYarenAdmin">
+          <Key>
+            <PropertyRef Name="KayitNo" />
+          </Key>
+          <Property Name="KayitNo" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Personel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelSifre" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Yetki" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EczaneYarenBorc">
+          <Key>
+            <PropertyRef Name="Hasta" />
+          </Key>
+          <Property Name="Hasta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BorcDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Borc" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Kalan" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="BorcTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KapanmaTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EczaneYarenRapor">
+          <Key>
+            <PropertyRef Name="RaporNo" />
+          </Key>
+          <Property Name="RaporNo" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Rapor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RaporTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="EczCVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EczaneYaren" EntityType="Self.EczaneYaren" />
+          <EntitySet Name="EczaneYarenAdmin" EntityType="Self.EczaneYarenAdmin" />
+          <EntitySet Name="EczaneYarenBorc" EntityType="Self.EczaneYarenBorc" />
+          <EntitySet Name="EczaneYarenRapor" EntityType="Self.EczaneYarenRapor" />
+          <EntitySet Name="EczaneGunlukKasa" EntityType="EczCVModel.EczaneGunlukKasa" />
+          <EntitySet Name="EczaneYarenKasaCikis" EntityType="EczCVModel.EczaneYarenKasaCikis" />
+        </EntityContainer>
+        <EntityType Name="EczaneGunlukKasa">
+          <Key>
+            <PropertyRef Name="KayıtNo" />
+          </Key>
+          <Property Name="KayıtNo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="KasaIslemTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KasaIslemMiktari" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IslemTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EczaneYarenKasaCikis">
+          <Key>
+            <PropertyRef Name="Tarih" />
+          </Key>
+          <Property Name="Tarih" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kasa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EczCVModelStoreContainer" CdmEntityContainer="EczCVEntities">
+          <EntitySetMapping Name="EczaneYaren">
+            <EntityTypeMapping TypeName="EczCVModel.EczaneYaren">
+              <MappingFragment StoreEntitySet="EczaneYaren">
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="IlacDurum" ColumnName="IlacDurum" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Not" ColumnName="Not" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EczaneYarenAdmin">
+            <EntityTypeMapping TypeName="EczCVModel.EczaneYarenAdmin">
+              <MappingFragment StoreEntitySet="EczaneYarenAdmin">
+                <ScalarProperty Name="KayitNo" ColumnName="KayitNo" />
+                <ScalarProperty Name="Personel" ColumnName="Personel" />
+                <ScalarProperty Name="PersonelSifre" ColumnName="PersonelSifre" />
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EczaneYarenBorc">
+            <EntityTypeMapping TypeName="EczCVModel.EczaneYarenBorc">
+              <MappingFragment StoreEntitySet="EczaneYarenBorc">
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="BorcDurum" ColumnName="BorcDurum" />
+                <ScalarProperty Name="Borc" ColumnName="Borc" />
+                <ScalarProperty Name="Kalan" ColumnName="Kalan" />
+                <ScalarProperty Name="BorcTarih" ColumnName="BorcTarih" />
+                <ScalarProperty Name="KapanmaTarih" ColumnName="KapanmaTarih" />
+                <ScalarProperty Name="Not" ColumnName="Not" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EczaneYarenRapor">
+            <EntityTypeMapping TypeName="EczCVModel.EczaneYarenRapor">
+              <MappingFragment StoreEntitySet="EczaneYarenRapor">
+                <ScalarProperty Name="RaporNo" ColumnName="RaporNo" />
+                <ScalarProperty Name="Rapor" ColumnName="Rapor" />
+                <ScalarProperty Name="RaporTarih" ColumnName="RaporTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EczaneGunlukKasa">
+            <EntityTypeMapping TypeName="EczCVModel.EczaneGunlukKasa">
+              <MappingFragment StoreEntitySet="EczaneGunlukKasa">
+                <ScalarProperty Name="IslemTarihi" ColumnName="IslemTarihi" />
+                <ScalarProperty Name="Not" ColumnName="Not" />
+                <ScalarProperty Name="KasaIslemMiktari" ColumnName="KasaIslemMiktari" />
+                <ScalarProperty Name="KasaIslemTipi" ColumnName="KasaIslemTipi" />
+                <ScalarProperty Name="KayıtNo" ColumnName="KayıtNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EczaneYarenKasaCikis">
+            <EntityTypeMapping TypeName="EczCVModel.EczaneYarenKasaCikis">
+              <MappingFragment StoreEntitySet="EczaneYarenKasaCikis">
+                <ScalarProperty Name="Kasa" ColumnName="Kasa" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

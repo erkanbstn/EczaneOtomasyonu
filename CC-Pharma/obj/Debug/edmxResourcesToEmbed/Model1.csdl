@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EczCVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EczaneYaren">
+    <Key>
+      <PropertyRef Name="Hasta" />
+    </Key>
+    <Property Name="Hasta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IlacDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EczaneYarenAdmin">
+    <Key>
+      <PropertyRef Name="KayitNo" />
+    </Key>
+    <Property Name="KayitNo" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Personel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelSifre" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Yetki" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EczaneYarenBorc">
+    <Key>
+      <PropertyRef Name="Hasta" />
+    </Key>
+    <Property Name="Hasta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BorcDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Borc" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Kalan" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="BorcTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KapanmaTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EczaneYarenRapor">
+    <Key>
+      <PropertyRef Name="RaporNo" />
+    </Key>
+    <Property Name="RaporNo" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Rapor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RaporTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="EczCVEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EczaneYaren" EntityType="Self.EczaneYaren" />
+    <EntitySet Name="EczaneYarenAdmin" EntityType="Self.EczaneYarenAdmin" />
+    <EntitySet Name="EczaneYarenBorc" EntityType="Self.EczaneYarenBorc" />
+    <EntitySet Name="EczaneYarenRapor" EntityType="Self.EczaneYarenRapor" />
+    <EntitySet Name="EczaneGunlukKasa" EntityType="EczCVModel.EczaneGunlukKasa" />
+    <EntitySet Name="EczaneYarenKasaCikis" EntityType="EczCVModel.EczaneYarenKasaCikis" />
+  </EntityContainer>
+  <EntityType Name="EczaneGunlukKasa">
+    <Key>
+      <PropertyRef Name="KayıtNo" />
+    </Key>
+    <Property Name="KayıtNo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="KasaIslemTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KasaIslemMiktari" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IslemTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EczaneYarenKasaCikis">
+    <Key>
+      <PropertyRef Name="Tarih" />
+    </Key>
+    <Property Name="Tarih" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kasa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
